@@ -51,6 +51,11 @@ ui = dashboardPage(skin = "black",
                          icon = icon("check-square")
                        ),
                        menuItem(
+                         text = "Shiny Architecture",
+                         tabName = "shinyArchitecture",
+                         icon = icon("gem")
+                       ),
+                       menuItem(
                          text = "Summary",
                          tabName = "summary",
                          icon = icon("flag")
@@ -70,11 +75,11 @@ ui = dashboardPage(skin = "black",
                      tabItems(
                        tabItem(
                          tabName = "introduction",
-                         imageOutput(outputId = "image_introduction")
+                         imageOutput(outputId = "image_introduction") %>% withSpinner(type = 6, color = "#76B7D2")
                        ),
                        tabItem(
                          tabName = "problem",
-                         imageOutput(outputId = "image_problem")
+                         imageOutput(outputId = "image_problem") %>% withSpinner(type = 6, color = "#76B7D2")
                        ),
                        tabItem(
                          tabName = "dataset",
@@ -103,7 +108,7 @@ ui = dashboardPage(skin = "black",
                            )
                          ), br(), br(),
                          fluidRow(
-                           DT::dataTableOutput(outputId = "dataTable")
+                           DT::dataTableOutput(outputId = "dataTable") %>% withSpinner(type = 6, color = "#76B7D2")
                          )
                        ),
                        tabItem(
@@ -111,7 +116,7 @@ ui = dashboardPage(skin = "black",
                          tabsetPanel(
                            tabPanel(
                              title = "Correlations",
-                             uiOutput(outputId = "image_correlationMatrix")
+                             uiOutput(outputId = "image_correlationMatrix") %>% withSpinner(type = 6, color = "#76B7D2")
                            ),
                            tabPanel(
                              title = "Distributions",
@@ -122,15 +127,122 @@ ui = dashboardPage(skin = "black",
                        ),
                        tabItem(
                          tabName = "architecture",
-                         uiOutput(outputId = "image_architecture")
+                         uiOutput(outputId = "image_architecture") %>% withSpinner(type = 6, color = "#76B7D2")
                        ),
                        tabItem(
                          tabName = "sagemaker",
                          tabsetPanel(
                            tabPanel(
-                             title = "Precision & Recall",
-                             uiOutput(outputId = "image_recall") %>% withSpinner(type = 6, color = "#76B7D2"),
-                             uiOutput(outputId = "image_recallAndPrecision") %>% withSpinner(type = 6, color = "#76B7D2")
+                             title = "Tab 1",
+                             tabBox(
+                               width = 12,
+                               tabPanel(
+                                 title = "1",
+                                 uiOutput(outputId = "sagemaker_slide1") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "2",
+                                 uiOutput(outputId = "sagemaker_slide2") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "3",
+                                 uiOutput(outputId = "sagemaker_slide3") %>% withSpinner(type = 6, color = "#76B7D2")
+                               )
+                             )
+                           ),
+                           tabPanel(
+                             title = "Tab 2",
+                             tabBox(
+                               width = 12,
+                               tabPanel(
+                                 title = "1",
+                                 uiOutput(outputId = "sagemaker_slide4") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "2",
+                                 uiOutput(outputId = "sagemaker_slide5") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "3",
+                                 uiOutput(outputId = "sagemaker_slide6") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "4",
+                                 uiOutput(outputId = "sagemaker_slide7") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "5",
+                                 uiOutput(outputId = "sagemaker_slide8") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "6",
+                                 uiOutput(outputId = "sagemaker_slide9") %>% withSpinner(type = 6, color = "#76B7D2")
+                               )
+                             )
+                           ),
+                           tabPanel(
+                             title = "Tab 3",
+                             tabBox(
+                               width = 12,
+                               tabPanel(
+                                 title = "1",
+                                 uiOutput(outputId = "sagemaker_slide10") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "2",
+                                 uiOutput(outputId = "sagemaker_slide11") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "3",
+                                 uiOutput(outputId = "sagemaker_slide12") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "4",
+                                 uiOutput(outputId = "sagemaker_slide13") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "5",
+                                 uiOutput(outputId = "sagemaker_slide14") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "6",
+                                 uiOutput(outputId = "sagemaker_slide15") %>% withSpinner(type = 6, color = "#76B7D2")
+                               )
+                             )
+                           ),
+                           tabPanel(
+                             title = "Tab 4",
+                             tabBox(
+                               width = 12,
+                               tabPanel(
+                                 title = "1",
+                                 uiOutput(outputId = "sagemaker_slide16") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "2",
+                                 uiOutput(outputId = "sagemaker_slide17") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "3",
+                                 uiOutput(outputId = "sagemaker_slide18") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "4",
+                                 uiOutput(outputId = "image_recall") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "5",
+                                 uiOutput(outputId = "image_recallAndPrecision") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "6",
+                                 uiOutput(outputId = "sagemaker_slide21") %>% withSpinner(type = 6, color = "#76B7D2")
+                               ),
+                               tabPanel(
+                                 title = "7",
+                                 uiOutput(outputId = "sagemaker_slide22") %>% withSpinner(type = 6, color = "#76B7D2")
+                               )
+                             )
                            )
                          )
                        ),
@@ -263,9 +375,18 @@ ui = dashboardPage(skin = "black",
                          )
                        ),
                        tabItem(
+                         tabName = "shinyArchitecture",
+                         uiOutput(outputId = "image_shinyArchitecture")
+                       ),
+                       tabItem(
                          tabName = "summary",
-                         a("Link to code (TBD)",
-                           href = NULL, target = "_blank")
+                         # a("Link to code (TBD)",
+                         #   href = NULL, target = "_blank")
+                         h3("The models and hyperparameter testing yielded the following results:"),
+                         dataTableOutput(outputId = "summary_models", width = "50%"), br(),
+                         h3("However, Sagemaker did not provide enough improvement to the workflow for this kind of analysis compared to compiling through a remote desktop or server to increase cpu or gpu accuracy.
+An analysis that would involve substantially more features or records may need Sagemaker's improved modeling."), br(),
+                         h3("However, it is clear to us that the best application of Sagemaker is with complex image or text data over binary classification of feature-rich records.")
                        )
                      )
                    )
@@ -315,6 +436,13 @@ server = function(input, output, session) {
     imageUrl = "https://cloudcomputinggroup10data.s3.us-east-2.amazonaws.com/Cloud+Infrastructure+Updated.PNG"
     
     tags$img(src = imageUrl, alt = "Image not available at this time!")
+  })
+  
+  lapply(c(1:18,21,22), function(i) {
+    output[[paste0("sagemaker_slide", i)]] = renderUI(expr = {
+      imageUrl = SAGEMAKER_SLIDE_IMAGE_NAMES[i]
+      tags$img(src = imageUrl, alt = "Image not available at this time!")
+    })
   })
   
   output$image_recall = renderUI(expr = {
@@ -455,6 +583,23 @@ server = function(input, output, session) {
         ylab(label = "Probability of Fraud")
     }
     
+  })
+  
+  output$image_shinyArchitecture = renderUI(expr = {
+    imageUrl = "https://cloudcomputinggroup10data.s3.us-east-2.amazonaws.com/Shiny+App/ShinyArchitecture.PNG"
+    
+    tags$img(src = imageUrl, alt = "Image not available at this time!")
+  })
+  
+  output$summary_models = renderDataTable(expr = {
+    datatable(SUMMARY_MODELS,
+              rownames = NULL,
+              options = list(
+                pageLength = 7,
+                searching = FALSE,
+                lengthChange = FALSE
+              )
+    )
   })
   
   # observeEvent(eventExpr = input$logistic_fixVariable, handlerExpr = {

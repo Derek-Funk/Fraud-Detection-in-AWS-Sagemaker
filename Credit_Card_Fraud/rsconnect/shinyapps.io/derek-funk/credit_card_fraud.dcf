@@ -5,6 +5,6 @@ account: derek-funk
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2057460
-bundleId: 3001344
+bundleId: 3009543
 url: https://derek-funk.shinyapps.io/credit_card_fraud/
-when: 1586644831.19986
+when: 1586829624.17743
